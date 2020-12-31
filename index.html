@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteBook</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="some">
+            <div class="search_box">
+                <div id="cover">
+                    <form method="get" action="">
+                        <div class="tb">
+                            <div class="td">
+                                <input class="ip_search" type="text" placeholder="Search" required>
+                            </div>
+                            <div class="td" id="s-cover">
+                                <button class="btn_search" type="submit">
+                                    <div id="s-circle"></div>
+                                    <span></span>
+                                  </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="notes-wrapper">
+                <div class="notes" id="notes-preview">
+                    <div class="note active" data-note="0">
+                        <div class="text">
+                            <h2>Carol's Party</h2>
+                            <p>Bring her a gift and buy soda. A soft drink is a drink that usually contains carbonated water, a sweetener, and a natural or artificial flavoring. The sweetener may be a sugar, high-fructose corn syrup, fruit juice, a sugar
+                                substitute (in the case of diet drinks), or some combination of these. Soft drinks may also contain caffeine, colorings, preservatives, and/or other ingredients.</p>
+                        </div>
+                    </div>
+                    <div class="note" data-note="1">
+                        <div class="text">
+                            <h2>Shopping List</h2>
+                            <p>Eggs, lemonade, tomatos, soda, bread, milk, cheese </p>
+                        </div>
+                        <div class="aux">
+                            <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="note" data-note="2">
+                        <div class="text">
+                            <h2>Tomorrow's Brunch</h2>
+                            <p>Call Diego and tell him about the brunch. Brunch is a combination of breakfast and lunch, and regularly has some form of alcoholic drink (most usually champagne or a cocktail) served with it. It is usually served anytime before
+                                3 o\'clock in the afternoon. </p>
+                        </div>
+                        <div class="aux" data-note="4">
+                            <div class="img"><img src="./images/2.jpg" alt="" /></div>
+                        </div>
+                    </div>
+                    <div class="note" data-note="3">
+                        <div class="text">
+                            <h2>Project Ideas</h2>
+                            <p>A cool fashion website, inspired by vogue.</p>
+                        </div>
+                        <div class="aux">
+                            <div class="img"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="current-wrapper" id="current-wrapper" data-note="0">
+            <div class="header">
+                <div class="left-controls">
+                    <button id="to-bold"><b>N</b></button>
+                    <button id="to-italic"><i>I</i></button>
+                    <button id="to-underlined"><u>U</u></button>
+                    <button id="to-s"><s>S</s></button>
+                    <button id="to-em"><em>E</em></button>
+                </div>
+                <i class="far fa-edit" id="edit-note-btn"></i
+          ><i class="fas fa-paperclip" id="add-image"></i
+          ><i class="far fa-trash-alt" id="delete-note"></i
+          ><i class="fas fa-cog" id="open-config"></i>
+            </div>
+            <h1 id="current-title">Buổi tiệc</h1>
+            <div id="current-note">
+                Bia và soda
+                <div class="img-wp"><img src="./images/1.jpg" alt="" /></div>
+                Phần quà nhỏ cho sinh nhật
+                <div class="img-wp"><img src="./images/3.jpg" alt="" /></div>
+            </div>
+        </div>
+        <div class="add-btn-wrapper" id="add-note">
+            <button class="control"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="backdrop"></div>
+        <div id="cofig-modal" class="modal">
+            <div class="inner-modal">
+                <div class="part">
+                    <p>Spelling Correction</p>
+                    <label class="toggle-control">
+              <input type="checkbox" checked="checked" id="spell-cf" />
+              <span class="control"></span>
+            </label>
+                </div>
+                <div class="part">
+                    <p>Font Size</p>
+                    <input type="number" value="16" min="9" max="25" id="change-ft-size" class="left-inp" />
+                </div>
+                <div class="part">
+                    <p>Dark Mode</p>
+                    <label class="toggle-control">
+              <input type="checkbox" id="dark-mode" />
+              <span class="control"></span>
+            </label>
+                </div>
+                <div class="part"></div>
+            </div>
+        </div>
+        <div class="confirm-modal">
+            <h3>Do you want to delete this note?</h3>
+            <div class="flex-full">
+                <button id="conf-del">Yes</button>
+                <button id="close-del">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/configsManager.js"></script>
+</body>
+
+</html>
